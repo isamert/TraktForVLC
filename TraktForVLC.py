@@ -442,9 +442,9 @@ class TraktForVLC(object):
         currentFilePath = vlc.get_filename()
 
         if self.USE_FILENAME:
-            currentFileName = currentFilePath
+            currentFileName = currentFilePath.decode('utf-8')
         else:
-            currentFileName = vlc.get_title()
+            currentFileName = vlc.get_title().decode('utf-8')
         self.vlcTime = int(vlc.get_time())
 
         # Parse the filename to verify if it comes from a stream
